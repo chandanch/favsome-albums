@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUsers } from '../../store';
+import SkeltonLoader from '../loaders/skeleton-loader/SkeletonLoader';
 
 const UsersList = () => {
 	const dispatch = useDispatch();
@@ -13,7 +14,7 @@ const UsersList = () => {
 	}, [dispatch]);
 
 	if (isLoading) {
-		return <div>Fetching Users...</div>;
+		return <SkeltonLoader skeletons={4} />;
 	}
 
 	if (error) {
