@@ -14,7 +14,7 @@ const UsersList = () => {
 	}, [dispatch]);
 
 	if (isLoading) {
-		return <SkeltonLoader skeletons={4} />;
+		return <SkeltonLoader skeletons={4} className="h-10 w-full" />;
 	}
 
 	if (error) {
