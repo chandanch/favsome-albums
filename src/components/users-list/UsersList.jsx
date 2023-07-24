@@ -21,7 +21,20 @@ const UsersList = () => {
 		return <div>Error fetching users.</div>;
 	}
 
-	return <div> {data.length} </div>;
+	const renderUsersList = () => {
+		const usersList = data.map((user) => {
+			return (
+				<div className="mb2 border rounded">
+					<div className="flex p-2 justify-between items-center cursor-pointer">
+						{user.name}
+					</div>
+				</div>
+			);
+		});
+		return usersList;
+	};
+
+	return <div> {renderUsersList()} </div>;
 };
 
 export default UsersList;
