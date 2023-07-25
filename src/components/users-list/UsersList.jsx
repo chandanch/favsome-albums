@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUsers } from '../../store';
+import { addUser, getUsers } from '../../store';
 import SkeltonLoader from '../loaders/skeleton-loader/SkeletonLoader';
+import Button from '../button/Button';
 
 const UsersList = () => {
 	const dispatch = useDispatch();
@@ -21,10 +22,14 @@ const UsersList = () => {
 		return <div>Error fetching users.</div>;
 	}
 
+	const addNewUser = () => {
+		dispatch(addUser());
+	};
+
 	const renderUsersList = () => {
 		const usersList = data.map((user) => {
 			return (
-				<div className="mb2 border rounded">
+				<div className="mb2 border rounded" key={user.id}>
 					<div className="flex p-2 justify-between items-center cursor-pointer">
 						{user.name}
 					</div>
@@ -34,7 +39,15 @@ const UsersList = () => {
 		return usersList;
 	};
 
-	return <div> {renderUsersList()} </div>;
+	return (
+		<div>
+			<div className="flex flex-row justify-between m-3">
+				<h1 className="m-2 text-xl">Users</h1>
+				<Button onClick={addNewUser}>Add New User</Button>
+			</div>
+			{renderUsersList()}{' '}
+		</div>
+	);
 };
 
 export default UsersList;
