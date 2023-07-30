@@ -17,7 +17,8 @@ const UsersList = () => {
 		setIsLoadingUser(true);
 		dispatch(getUsers())
 			.unwrap()
-			.then(() => console.log('users list'));
+			.catch((err) => setLoadingUserError(true))
+			.finally(() => setIsLoadingUser(false));
 	}, [dispatch]);
 
 	if (isLoadingUser) {
