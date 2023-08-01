@@ -3,26 +3,23 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addUser, getUsers } from '../../store';
 import SkeltonLoader from '../loaders/skeleton-loader/SkeletonLoader';
 import Button from '../button/Button';
+import { useThunkManager } from '../../hooks/useThunkManager';
 
 const UsersList = () => {
 	const dispatch = useDispatch();
-	const [isLoadingUser, setIsLoadingUser] = useState(false);
-	const [loadingUserError, setLoadingUserError] = useState(null);
+	const [execgetUsers, isLoadingUser, loadingUserError] =
+		useThunkManager(getUsers);
 
-	const [isAddingUser, setIsAddingUser] = useState(false);
-	const [addingUserError, setAddingUserError] = useState(null);
+	const [execAddUser, isAddingUser, addingUserError] =
+		useThunkManager(addUser);
 
 	const { data } = useSelector((state) => {
 		return state.users;
 	});
 
 	useEffect(() => {
-		setIsLoadingUser(true);
-		dispatch(getUsers())
-			.unwrap()
-			.catch((err) => setLoadingUserError(err))
-			.finally(() => setIsLoadingUser(false));
-	}, [dispatch]);
+		execgetUsers();
+	}, [execgetUsers]);
 
 	if (isLoadingUser) {
 		return <SkeltonLoader skeletons={4} className="h-10 w-full" />;
@@ -33,11 +30,7 @@ const UsersList = () => {
 	}
 
 	const addNewUser = () => {
-		setIsAddingUser(true);
-		dispatch(addUser())
-			.unwrap()
-			.catch((err) => setAddingUserError(err))
-			.finally(() => setIsAddingUser(false));
+		execAddUser();
 	};
 
 	const renderUsersList = () => {
