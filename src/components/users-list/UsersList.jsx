@@ -1,12 +1,11 @@
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { addUser, getUsers } from '../../store';
 import SkeltonLoader from '../loaders/skeleton-loader/SkeletonLoader';
 import Button from '../button/Button';
 import { useThunkManager } from '../../hooks/useThunkManager';
 
 const UsersList = () => {
-	const dispatch = useDispatch();
 	const [execgetUsers, isLoadingUser, loadingUserError] =
 		useThunkManager(getUsers);
 
