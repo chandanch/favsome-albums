@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { usersReducers } from './slices/usersSlice';
 import { getUsers } from './thunks/getUsers';
 import { addUser } from './thunks/addUser';
+import { deleteUser } from './thunks/deleteUser';
 
 const store = configureStore({
 	reducer: {
@@ -9,4 +10,4 @@ const store = configureStore({
 	},
 });
 
-export { store, getUsers, addUser };
+export { store, getUsers, addUser, deleteUser };
