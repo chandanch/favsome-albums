@@ -4,6 +4,7 @@ import { addUser, getUsers } from '../../store';
 import SkeltonLoader from '../loaders/skeleton-loader/SkeletonLoader';
 import Button from '../button/Button';
 import { useThunkManager } from '../../hooks/useThunkManager';
+import UsersListItem from '../users-list-item/UsersListItem';
 
 const UsersList = () => {
 	const [execgetUsers, isLoadingUser, loadingUserError] =
@@ -26,13 +27,7 @@ const UsersList = () => {
 
 	const renderUsersList = () => {
 		const usersList = data.map((user) => {
-			return (
-				<div className="mb2 border rounded" key={user.id}>
-					<div className="flex p-2 justify-between items-center cursor-pointer">
-						{user.name}
-					</div>
-				</div>
-			);
+			return <UsersListItem key={user.id} user={user} />;
 		});
 		return usersList;
 	};
