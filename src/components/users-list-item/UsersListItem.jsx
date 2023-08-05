@@ -3,6 +3,7 @@ import { useThunkManager } from '../../hooks/useThunkManager';
 import { deleteUser } from '../../store';
 import Button from '../button/Button';
 import ExpandablePanel from '../expandable-panel/ExpandablePanel';
+import AlbumsList from '../albums-list/AlbumsList';
 
 const UsersListItem = ({ user }) => {
 	const [execDeleteUser, isLoading, error] = useThunkManager(deleteUser);
@@ -27,7 +28,7 @@ const UsersListItem = ({ user }) => {
 
 	return (
 		<ExpandablePanel header={header}>
-			Albums List of {user.name}
+			<AlbumsList user={user} />
 		</ExpandablePanel>
 	);
 };
