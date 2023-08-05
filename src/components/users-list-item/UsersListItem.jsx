@@ -25,7 +25,11 @@ const UsersListItem = ({ user }) => {
 		</>
 	);
 
-	return <ExpandablePanel header={header}>Albums List</ExpandablePanel>;
+	return (
+		<ExpandablePanel header={header}>
+			Albums List of {user.name}
+		</ExpandablePanel>
+	);
 };
 
 export default UsersListItem;
