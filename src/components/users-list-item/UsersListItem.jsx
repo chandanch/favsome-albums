@@ -13,11 +13,17 @@ const UsersListItem = ({ user }) => {
 	return (
 		<div className="mb2 border rounded">
 			<div className="flex p-2 justify-between items-center cursor-pointer">
-				{error && <div>Error in deleting user</div>}
-				<Button isLoading={isLoading} onClick={handleDelete}>
-					<GoTrash />
-				</Button>
-				{user.name}
+				<div className="flex flex-row items-center justify-center">
+					{error && <div>Error in deleting user</div>}
+					<Button
+						className="mr-3"
+						isLoading={isLoading}
+						onClick={handleDelete}
+					>
+						<GoTrash />
+					</Button>
+					{user.name}
+				</div>
 			</div>
 		</div>
 	);
