@@ -2,6 +2,7 @@ import { GoTrash } from 'react-icons/go';
 import { useThunkManager } from '../../hooks/useThunkManager';
 import { deleteUser } from '../../store';
 import Button from '../button/Button';
+import ExpandablePanel from '../expandable-panel/ExpandablePanel';
 
 const UsersListItem = ({ user }) => {
 	const [execDeleteUser, isLoading, error] = useThunkManager(deleteUser);
@@ -10,23 +11,21 @@ const UsersListItem = ({ user }) => {
 		execDeleteUser(user.id);
 	};
 
-	return (
-		<div className="mb2 border rounded">
-			<div className="flex p-2 justify-between items-center cursor-pointer">
-				<div className="flex flex-row items-center justify-center">
-					{error && <div>Error in deleting user</div>}
-					<Button
-						className="mr-3"
-						isLoading={isLoading}
-						onClick={handleDelete}
-					>
-						<GoTrash />
-					</Button>
-					{user.name}
-				</div>
-			</div>
-		</div>
+	const header = (
+		<>
+			{error && <div>Error in deleting user</div>}
+			<Button
+				className="mr-3"
+				isLoading={isLoading}
+				onClick={handleDelete}
+			>
+				<GoTrash />
+			</Button>
+			{user.name}
+		</>
 	);
+
+	return <ExpandablePanel header={header}>Albums List</ExpandablePanel>;
 };
 
 export default UsersListItem;
