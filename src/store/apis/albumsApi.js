@@ -21,3 +21,6 @@ const albumsApi = createApi({
 		};
 	},
 });
+
+export const { useGetAlbumsQuery } = albumsApi;
+export { albumsApi };
