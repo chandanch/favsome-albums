@@ -25,6 +25,17 @@
       "id": 6
     }
   ],
-  "albums": [],
+  "albums": [
+    {
+      "id": 1,
+      "name": "Fav Collections",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "name": "Vacay Collection",
+      "userId": 1
+    }
+  ],
   "photos": []
 }
