@@ -5,7 +5,12 @@ const AlbumsList = ({ user }) => {
 
 	console.log(data, error, isLoading);
 
-	return <div> Albums of {user.name} </div>;
+	return (
+		<div>
+			{' '}
+			Albums of {user.name} {data.length === 0 ? 'No Albums' : ''}{' '}
+		</div>
+	);
 };
 
 export default AlbumsList;
