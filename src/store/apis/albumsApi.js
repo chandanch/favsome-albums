@@ -18,9 +18,18 @@ const albumsApi = createApi({
 					};
 				},
 			}),
+			addAlbum: builder.mutation({
+				query: (album) => {
+					return {
+						url: '/albums',
+						method: 'POST',
+						body: album,
+					};
+				},
+			}),
 		};
 	},
 });
 
-export const { useGetAlbumsQuery } = albumsApi;
+export const { useGetAlbumsQuery, useAddAlbumMutation } = albumsApi;
 export { albumsApi };
