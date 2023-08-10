@@ -1,9 +1,9 @@
 import { useGetAlbumsQuery } from '../../store';
 
 const AlbumsList = ({ user }) => {
-	const { data, error, isLoading } = useGetAlbumsQuery(user);
+	const { data, error, isLoading, isFetching } = useGetAlbumsQuery(user);
 
-	console.log(data, error, isLoading);
+	console.log(data, error, isLoading, isFetching);
 
 	return (
 		<div>
