@@ -37,6 +37,7 @@ const AlbumsList = ({ user }) => {
 			name: faker.commerce.productName(),
 			userId: user.id,
 		});
+		console.log(results);
 	};
 
 	return (
