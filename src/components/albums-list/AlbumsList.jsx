@@ -42,8 +42,10 @@ const AlbumsList = ({ user }) => {
 
 	return (
 		<div>
-			<Button onClick={addAlbum}> + Add Album</Button>
-			<h2>Albums of {user.name}</h2>
+			<div className="m-2 flex flex-row items-center justify-between">
+				<h3 className="text-lg font-bold">Albums of {user.name}</h3>
+				<Button onClick={addAlbum}> + Add Album</Button>
+			</div>
 			<div>{componentContent}</div>
 		</div>
 	);
