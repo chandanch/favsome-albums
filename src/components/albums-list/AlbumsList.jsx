@@ -2,8 +2,8 @@ import { faker } from '@faker-js/faker';
 
 import { useAddAlbumMutation, useGetAlbumsQuery } from '../../store';
 import Button from '../button/Button';
-import ExpandablePanel from '../expandable-panel/ExpandablePanel';
 import SkeltonLoader from '../loaders/skeleton-loader/SkeletonLoader';
+import AlbumListItem from '../albums-list-item/AlbumListItem';
 
 const AlbumsList = ({ user }) => {
 	const { data, error, isFetching } = useGetAlbumsQuery(user);
@@ -22,12 +22,7 @@ const AlbumsList = ({ user }) => {
 				<div>No Albums</div>
 			) : (
 				(componentContent = data.map((album) => {
-					const header = <div>{album.name}</div>;
-					return (
-						<ExpandablePanel header={header} key={album.id}>
-							List of Photos!
-						</ExpandablePanel>
-					);
+					return <AlbumListItem key={album.id} album={album} />;
 				}))
 			);
 	}
