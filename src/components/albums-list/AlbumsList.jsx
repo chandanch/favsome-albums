@@ -6,11 +6,11 @@ import ExpandablePanel from '../expandable-panel/ExpandablePanel';
 import SkeltonLoader from '../loaders/skeleton-loader/SkeletonLoader';
 
 const AlbumsList = ({ user }) => {
-	const { data, error, isLoading } = useGetAlbumsQuery(user);
+	const { data, error, isFetching } = useGetAlbumsQuery(user);
 	const [addData, results] = useAddAlbumMutation();
 
 	let componentContent;
-	if (isLoading) {
+	if (isFetching) {
 		componentContent = (
 			<SkeltonLoader skeletons={3} className="h-8 w-full" />
 		);
