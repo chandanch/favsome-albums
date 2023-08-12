@@ -35,6 +35,31 @@
       "id": 2,
       "name": "Vacay Collection",
       "userId": 1
+    },
+    {
+      "name": "Recycled Frozen Fish",
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "name": "Electronic Concrete Shoes",
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "name": "Handcrafted Concrete Chicken",
+      "userId": 1,
+      "id": 5
+    },
+    {
+      "name": "Unbranded Frozen Car",
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "name": "Luxurious Plastic Mouse",
+      "userId": 1,
+      "id": 7
     }
   ],
   "photos": []
