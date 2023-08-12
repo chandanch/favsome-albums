@@ -37,14 +37,15 @@ const AlbumsList = ({ user }) => {
 			name: faker.commerce.productName(),
 			userId: user.id,
 		});
-		console.log(results);
 	};
 
 	return (
 		<div>
 			<div className="m-2 flex flex-row items-center justify-between">
 				<h3 className="text-lg font-bold">Albums of {user.name}</h3>
-				<Button onClick={addAlbum}> + Add Album</Button>
+				<Button isLoading={results.isLoading} onClick={addAlbum}>
+					+ Add Album
+				</Button>
 			</div>
 			<div>{componentContent}</div>
 		</div>
