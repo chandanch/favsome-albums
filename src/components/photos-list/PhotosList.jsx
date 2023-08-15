@@ -1,8 +1,4 @@
-import {
-	useAddAlbumMutation,
-	useAddPhotoMutation,
-	useGetPhotosQuery,
-} from '../../store';
+import { useAddPhotoMutation, useGetPhotosQuery } from '../../store';
 import Button from '../button/Button';
 import SkeltonLoader from '../loaders/skeleton-loader/SkeletonLoader';
 import PhotosListItem from '../photos-list-item/PhotosListItem';
