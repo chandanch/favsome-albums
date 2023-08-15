@@ -37,7 +37,9 @@ const AlbumsList = ({ user }) => {
 	return (
 		<div>
 			<div className="m-2 flex flex-row items-center justify-between">
-				<h3 className="text-lg font-bold">Albums of {user.name}</h3>
+				<h3 className="text-md font-bold" style={{ color: 'orange' }}>
+					Albums of {user.name}
+				</h3>
 				<Button isLoading={results.isLoading} onClick={addAlbum}>
 					+ Add Album
 				</Button>
