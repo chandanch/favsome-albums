@@ -37,27 +37,7 @@
       "userId": 1
     },
     {
-      "name": "Recycled Frozen Fish",
-      "userId": 1,
-      "id": 3
-    },
-    {
-      "name": "Electronic Concrete Shoes",
-      "userId": 1,
-      "id": 4
-    },
-    {
-      "name": "Handcrafted Concrete Chicken",
-      "userId": 1,
-      "id": 5
-    },
-    {
-      "name": "Unbranded Frozen Car",
-      "userId": 1,
-      "id": 6
-    },
-    {
-      "name": "Elegant Rubber Computer",
+      "name": "Elegant Photo Albums",
       "userId": 5,
       "id": 8
     }
@@ -74,24 +54,9 @@
       "id": 2
     },
     {
-      "albumId": 8,
-      "url": "https://loremflickr.com/150/100/abstract?lock=8982284197691392",
-      "id": 5
-    },
-    {
       "albumId": 1,
-      "url": "https://loremflickr.com/150/100/abstract?lock=2631946047848448",
-      "id": 8
-    },
-    {
-      "albumId": 8,
-      "url": "https://loremflickr.com/150/100/abstract?lock=5872090060161024",
-      "id": 9
-    },
-    {
-      "albumId": 8,
-      "url": "https://loremflickr.com/150/100/abstract?lock=6982222424834048",
-      "id": 10
+      "url": "https://loremflickr.com/150/100/abstract?lock=6622266985021440",
+      "id": 2
     }
   ]
 }
