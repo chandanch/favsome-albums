@@ -22,7 +22,9 @@ const UsersListItem = ({ user }) => {
 			>
 				<GoTrash />
 			</Button>
-			{user.name}
+			<h2 className="font-bold" style={{ color: 'green' }}>
+				{user.name}
+			</h2>
 		</>
 	);
 

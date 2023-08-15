@@ -6,7 +6,7 @@ import { getUsers } from './thunks/getUsers';
 import { addUser } from './thunks/addUser';
 import { deleteUser } from './thunks/deleteUser';
 import { albumsApi } from './apis/albumsApi';
-import { useGetAlbumsQuery, useAddAlbumMutation } from './apis/albumsApi';
+import { useGetAlbumsQuery, useAddAlbumMutation, useDeleteAlbumMutation } from './apis/albumsApi';
 
 const store = configureStore({
 	reducer: {
@@ -27,4 +27,5 @@ export {
 	deleteUser,
 	useGetAlbumsQuery,
 	useAddAlbumMutation,
+	useDeleteAlbumMutation
 };
