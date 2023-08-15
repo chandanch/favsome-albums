@@ -4,6 +4,7 @@ import {
 	useGetPhotosQuery,
 } from '../../store';
 import Button from '../button/Button';
+import SkeltonLoader from '../loaders/skeleton-loader/SkeletonLoader';
 import PhotosListItem from '../photos-list-item/PhotosListItem';
 import { faker } from '@faker-js/faker';
 
@@ -22,6 +23,17 @@ const PhotosList = ({ album }) => {
 		});
 	};
 
+	let content;
+	if (isFetching) {
+		content = <SkeltonLoader className="h-8 w-full" skeletons={4} />;
+	} else if (error) {
+		content = <>Error in Fetching Photos</>;
+	} else {
+		content = data.map((photo) => {
+			return <PhotosListItem key={photo.id} photo={photo} />;
+		});
+	}
+
 	return (
 		<div>
 			<div className="m-2 flex flex-row items-center justify-between">
@@ -31,6 +43,9 @@ const PhotosList = ({ album }) => {
 				<Button isLoading={results.isLoading} onClick={addNewPhoto}>
 					+ Add Photo
 				</Button>
+			</div>
+			<div className="mx-8 flex flex-row flex-wrap justify-center">
+				{content}
 			</div>
 		</div>
 	);
