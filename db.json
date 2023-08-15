@@ -57,10 +57,41 @@
       "id": 6
     },
     {
-      "name": "Luxurious Plastic Mouse",
-      "userId": 1,
-      "id": 7
+      "name": "Elegant Rubber Computer",
+      "userId": 5,
+      "id": 8
     }
   ],
-  "photos": []
+  "photos": [
+    {
+      "albumId": 8,
+      "url": "https://loremflickr.com/150/100/abstract?lock=7407756044664832",
+      "id": 1
+    },
+    {
+      "albumId": 8,
+      "url": "https://loremflickr.com/150/100/abstract?lock=6622266985021440",
+      "id": 2
+    },
+    {
+      "albumId": 8,
+      "url": "https://loremflickr.com/150/100/abstract?lock=8982284197691392",
+      "id": 5
+    },
+    {
+      "albumId": 1,
+      "url": "https://loremflickr.com/150/100/abstract?lock=2631946047848448",
+      "id": 8
+    },
+    {
+      "albumId": 8,
+      "url": "https://loremflickr.com/150/100/abstract?lock=5872090060161024",
+      "id": 9
+    },
+    {
+      "albumId": 8,
+      "url": "https://loremflickr.com/150/100/abstract?lock=6982222424834048",
+      "id": 10
+    }
+  ]
 }
